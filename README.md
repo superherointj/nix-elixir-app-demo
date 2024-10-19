@@ -79,3 +79,7 @@ Outputs at:
 # Automatic loading of nix shell
 
 Requires dir-env (https://direnv.net/).
+
+# Creating an Elixir Phoenix Project
+
+https://hexdocs.pm/phoenix/up_and_running.html
