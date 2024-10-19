@@ -7,6 +7,9 @@
       {
         packages = rec {
           hello = pkgs.callPackage ./hello.nix { };
+          hello-container = pkgs.callPackage ./container.nix {
+            inherit hello;
+          };
           default = hello;
         };
         apps = rec {
