@@ -91,3 +91,12 @@ Re-generate hello application:
 > mix phx.new hello
 
 Reference: https://hexdocs.pm/phoenix/up_and_running.html
+
+# Kubernetes Cluster
+
+For running an Elixir application in a Kubernetes cluster, use:
+  - libcluster: https://github.com/bitwalker/libcluster
+  - DeltaCrdt: 
+    - https://jumpwire.io/blog/in-memory-distributed-state-with-delta-crdts
+    - https://github.com/derekkraan/delta_crdt_ex
+  - Horde: https://github.com/derekkraan/horde
