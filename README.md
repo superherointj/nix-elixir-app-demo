@@ -55,6 +55,9 @@ A specific package shell:
 
 > nix develop .#hello
 
+## Update dependencies
+
+> nix flake update
 
 # Appendice
 
