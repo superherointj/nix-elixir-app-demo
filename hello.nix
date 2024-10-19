@@ -27,13 +27,16 @@ let
       # LC_ALL="en_US.UTF-8";
       # LANG="en_US.UTF-8";
 
-      MIX_ESBUILD_PATH="${pkgs.esbuild}/bin/esbuild";
-      MIX_ESBUILD_VERSION="${pkgs.esbuild.version}";
+      MIX_ESBUILD_PATH = "${pkgs.esbuild}/bin/esbuild";
+      MIX_ESBUILD_VERSION = "${pkgs.esbuild.version}";
 
-      buildPhase = ''
-        export RELEASE_COOKIE=your_cookie_value
-        mix release
-      '';
+      removeCookie = false;
+      # RELEASE_COOKIE = "your_cookie_value123"; # Fix-Me: Move this somewhere else.
+
+      # buildPhase = ''
+      #   export RELEASE_COOKIE=your_cookie_value
+      #   mix release
+      # '';
 
       # postBuild = ''
       #   export NODE_PATH="assets/node_modules"

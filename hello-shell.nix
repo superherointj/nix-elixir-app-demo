@@ -34,7 +34,10 @@ mkShell {
   # export LC_ALL=en_US.UTF-8
   LOCALE_ARCHIVE = if pkgs.stdenv.isLinux then "${pkgs.glibcLocalesUtf8}/lib/locale/locale-archive" else "";
 
+
   shellHook = ''
     echo "=== ${projectName} ==="
+
+    export RELEASE_COOKIE=your_cookie_value123
   '';
 }

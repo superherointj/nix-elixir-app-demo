@@ -92,6 +92,12 @@ Re-generate hello application:
 
 Reference: https://hexdocs.pm/phoenix/up_and_running.html
 
+# Executing project
+
+Because of RELEASE_COOKIE, start package as:
+
+> DATABASE_URL=ecto://USER:PASS@HOST/DATABASE RELEASE_COOKIE=xxxx ./result/bin/hello start
+
 # Kubernetes Cluster
 
 - Running Elixir containers connected (as a single application)
