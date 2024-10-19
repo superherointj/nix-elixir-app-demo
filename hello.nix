@@ -14,8 +14,8 @@ let
   mixFodDeps = beamPkgs.fetchMixDeps {
     pname = "${pname}-deps";
     inherit src version;
-    sha256 = ""; # test
-    mixEnv = "test";
+    sha256 = "sha256-2VgeypW2+xH0ZfBNW04tENdKRXvre8/2DBliqrEy9fQ="; # test
+    # mixEnv = "test";
   };
 
   hello-pkg =
@@ -70,3 +70,7 @@ let
     };
   in
     hello-pkg
+
+
+###
+# https://nixos.org/manual/nixpkgs/unstable/#sec-beam
