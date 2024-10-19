@@ -82,4 +82,12 @@ Requires dir-env (https://direnv.net/).
 
 # Creating an Elixir Phoenix Project
 
-https://hexdocs.pm/phoenix/up_and_running.html
+Delete "hello" application:
+
+> rm -rf hello
+
+Re-generate hello application:
+
+> mix phx.new hello
+
+Reference: https://hexdocs.pm/phoenix/up_and_running.html
