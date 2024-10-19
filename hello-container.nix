@@ -1,6 +1,7 @@
-{ hello
-, lib
-, pkgs
+{
+  hello,
+  lib,
+  pkgs,
 }:
 
 pkgs.dockerTools.buildImage {

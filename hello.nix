@@ -1,4 +1,8 @@
-{ pkgs, lib, withSystemd ? true }:
+{
+  lib,
+  pkgs,
+  withSystemd ? true
+}:
 
 let
   beamPkgs = (if withSystemd == true then pkgs.beam_nox else pkgs.beam_minimal).packages.erlang.beamPackages;
