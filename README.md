@@ -1,3 +1,7 @@
+# Creating Elixir project
+
+`mix phx.new hello`
+
 # Commands
 
 ## nix build
