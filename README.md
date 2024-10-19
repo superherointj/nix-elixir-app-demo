@@ -72,3 +72,7 @@ Outputs at:
  `./result-dev`
  `./result-lib`
  `./result-static`
+
+# Automatic loading of nix shell
+
+Requires dir-env (https://direnv.net/).

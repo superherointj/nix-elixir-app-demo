@@ -1,5 +1,12 @@
+# Flake.nix is an interface. Schema available at:
+# https://nixos.wiki/wiki/Flakes
+
 {
-  inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs = {
+    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.inputs.nixpkgs.follows = "nixpkgs"; # Syncs flake-utils's nixpkgs with our defined nixpkgs (nixos-unstable)
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
 
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
@@ -22,4 +29,5 @@
         };
       }
     );
-}
+
+} # End of Flake
