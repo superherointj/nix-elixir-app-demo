@@ -22,7 +22,7 @@ let
     beamPkgs.mixRelease {
       inherit pname version src mixFodDeps;
 
-      nativeBuildInputs = [ pkgs.nodejs ];
+      nativeBuildInputs = with pkgs; [ nodejs ];
 
       # LC_ALL="en_US.UTF-8";
       # LANG="en_US.UTF-8";
@@ -30,15 +30,20 @@ let
       MIX_ESBUILD_PATH="${pkgs.esbuild}/bin/esbuild";
       MIX_ESBUILD_VERSION="${pkgs.esbuild.version}";
 
-      postBuild = ''
-        export NODE_PATH="assets/node_modules"
-        rm assets/package.json
-        mkdir -p assets/node_modules
-        ln -s ${mixFodDeps}/phoenix assets/node_modules/phoenix
-        ln -s ${mixFodDeps}/phoenix_html assets/node_modules/phoenix_html
-        ln -s ${mixFodDeps}/phoenix_live_view assets/node_modules/phoenix_live_view
-        mix assets.deploy --no-deps-check
+      buildPhase = ''
+        export RELEASE_COOKIE=your_cookie_value
+        mix release
       '';
+
+      # postBuild = ''
+      #   export NODE_PATH="assets/node_modules"
+      #   rm assets/package.json
+      #   mkdir -p assets/node_modules
+      #   ln -s ${mixFodDeps}/phoenix assets/node_modules/phoenix
+      #   ln -s ${mixFodDeps}/phoenix_html assets/node_modules/phoenix_html
+      #   ln -s ${mixFodDeps}/phoenix_live_view assets/node_modules/phoenix_live_view
+      #   mix assets.deploy --no-deps-check
+      # '';
 
       # nativeCheckInputs = [ pkgs.postgresqlTestHook ];
       # checkInputs = [ pkgs.postgresql ];
